@@ -19,7 +19,7 @@ Este proyecto está actualmente en proceso de migración a **Laravel**. La versi
 
 * Implementar un sistema de gestión de usuarios y autenticación.
 * Conectar la interfaz con una base de datos para la persistencia de propiedades, usuarios, etc.
-* 
+  
 ---
 
 ## 🛠️ Tecnologías Utilizadas (v1)
