@@ -1,4 +1,4 @@
-# 🏡 InmoFacil v1 - Plataforma de Gestión Inmobiliaria (HTML/CSS/JS Estático)
+# 🏡 InmoFacil v1 - Plataforma de Gestión Inmobiliaria (HTML/CSS)
 
 Bienvenido al repositorio de InmoFacil, la primera versión de una plataforma de gestión y visualización de propiedades. Este proyecto, en su estado actual, se enfoca en el frontend estático utilizando HTML y CSS para ofrecer una interfaz de usuario limpia y funcional.
 
