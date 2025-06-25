@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente - InmoFácil (Empleados)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/empleado_editar_cliente.css"> <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="empleado_dashboard.html">InmoFácil (Empleado)</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_propiedades.html">Propiedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="empleado_clientes.html">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_contratos.html">Contratos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section aria-labelledby="edit-client-heading">
+            <h1 id="edit-client-heading" class="text-center mb-4 text-success">Editar Información del Cliente</h1>
+            <p class="text-center lead mb-4">Actualiza los datos del cliente y guarda los cambios.</p>
+
+            <form class="p-4 border rounded shadow-sm bg-light" id="editClientForm" novalidate>
+                <input type="hidden" id="clientId" name="clientId" value="C-001"> <div class="mb-3">
+                    <label for="clientName" class="form-label">Nombre Completo<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="clientName" name="clientName" value="Juan Pérez" placeholder="Ingresa el nombre completo del cliente" required aria-describedby="nameHelp">
+                    <div id="nameHelp" class="form-text">Nombre y apellido del cliente.</div>
+                    <div class="invalid-feedback">
+                        Por favor, ingresa el nombre del cliente.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="clientEmail" class="form-label">Correo Electrónico<span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="clientEmail" name="clientEmail" value="juanperez@example.com" placeholder="ejemplo@dominio.com" required aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Se usará para comunicaciones importantes.</div>
+                    <div class="invalid-feedback">
+                        Por favor, ingresa un correo electrónico válido.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="clientPhone" class="form-label">Número de Teléfono</label>
+                    <input type="tel" class="form-control" id="clientPhone" name="clientPhone" value="+54 9 11 1234-5678" placeholder="Ej: +54 9 11 1234-5678" aria-describedby="phoneHelp">
+                    <div id="phoneHelp" class="form-text">Incluye código de país y área si es posible.</div>
+                    <div class="invalid-feedback">
+                        Por favor, ingresa un número de teléfono válido.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="clientAddress" class="form-label">Dirección (Opcional)</label>
+                    <input type="text" class="form-control" id="clientAddress" name="clientAddress" value="Av. Libertador 1234, CABA" placeholder="Ej: Calle 123, Ciudad, Provincia">
+                </div>
+
+                <div class="mb-4">
+                    <label for="clientNotes" class="form-label">Notas Adicionales</label>
+                    <textarea class="form-control" id="clientNotes" name="clientNotes" rows="3" placeholder="Información relevante sobre el cliente, preferencias, historial de interacción, etc."></textarea>
+                </div>
+
+                <div class="d-flex justify-content-center gap-3">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="bi bi-save-fill"></i> Guardar Cambios
+                    </button>
+                    <a href="empleado_clientes.html" class="btn btn-secondary btn-lg">
+                        <i class="bi bi-x-circle-fill"></i> Cancelar
+                    </a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 InmoFácil - Todos los derechos reservados.</p>
+            <p>
+                <a href="/contacto.html" class="text-white mx-2">Contacto</a> |
+                <a href="politica.html" class="text-white mx-2">Política de Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

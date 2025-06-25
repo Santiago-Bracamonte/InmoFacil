@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Cliente - Inmobiliaria InmoFácil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/user_dashboard.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #28a745;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="user_dashboard.html">InmoFácil</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="user_dashboard.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user_propiedades.html">Propiedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user_contratos.html">Mis Contratos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="py-5" style="background-image: url('/img/fondo_dashboard.webp'); background-size: cover; background-position: center; color: white;">
+            <div class="container py-5 fondo">
+                <h1 class="text-center mb-4">Encuentra tu Hogar Ideal</h1>
+                <p class="text-center mb-5 lead">Utiliza nuestros filtros para buscar la propiedad perfecta para ti.</p>
+
+                <form class="bg-light p-4 rounded shadow-lg text-dark">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="fechaPublicacion" class="form-label">Fecha de Publicación</label>
+                            <input type="date" class="form-control" id="fechaPublicacion" name="fechaPublicacion" aria-describedby="fechaPublicacionHelp">
+                            <div id="fechaPublicacionHelp" class="form-text">Filtra propiedades publicadas a partir de esta fecha.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="tipoPropiedad" class="form-label">Tipo de Propiedad</label>
+                            <select class="form-select" id="tipoPropiedad" name="tipoPropiedad">
+                                <option value="" selected>Seleccionar tipo...</option>
+                                <option value="Casa">Casa</option>
+                                <option value="Departamento">Departamento</option>
+                                <option value="Terreno">Terreno</option>
+                                <option value="Local">Local Comercial</option>
+                                <option value="Oficina">Oficina</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mt-3">
+                        <div class="col-md-4">
+                            <label for="precioMinimo" class="form-label">Precio Mínimo</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" id="precioMinimo" name="precioMinimo" placeholder="0" min="0">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="precioMaximo" class="form-label">Precio Máximo</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" id="precioMaximo" name="precioMaximo" placeholder="999999999" min="0">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="habitaciones" class="form-label">Cantidad de Habitaciones</label>
+                            <select class="form-select" id="habitaciones" name="habitaciones">
+                                <option value="" selected>Cualquier cantidad...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4 o más</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mt-3">
+                        <div class="col-md-6">
+                            <label for="ubicacion" class="form-label">Ubicación</label>
+                            <input type="text" class="form-control" id="ubicacion" name="ubicacion" placeholder="Ej: Palermo, Belgrano, La Plata">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="superficie" class="form-label">Superficie Mínima (m²)</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="superficie" name="superficie" placeholder="Ej: 50" min="0">
+                                <span class="input-group-text">m²</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-success btn-lg me-2">Buscar Propiedades</button>
+                        <button type="reset" class="btn btn-secondary btn-lg">Limpiar Filtros</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="container my-5">
+            <h2 class="text-center mb-5 text-success">Acciones Rápidas del Cliente</h2>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-6 mb-4">
+                    <a href="user_propiedades.html" class="card-link d-block text-decoration-none">
+                        <div class="card shadow-lg border-success h-100 lift-on-hover">
+                            <img src="/img/casaUserDashboard.webp" class="card-img-top object-fit-cover" alt="Ilustración de una casa, representando la sección de propiedades.">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title text-success">Explorar Propiedades</h3>
+                                <p class="card-text text-dark">Descubre una amplia selección de casas, departamentos y terrenos disponibles para vos.</p>
+                                <div class="mt-auto">
+                                    <span class="btn btn-outline-success w-100">Ver Propiedades</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <a href="user_contratos.html" class="card-link d-block text-decoration-none">
+                        <div class="card shadow-lg border-success h-100 lift-on-hover">
+                            <img src="/img/contratoUserDashboard.webp" class="card-img-top object-fit-cover" alt="Ilustración de documentos y una pluma, representando la sección de contratos.">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title text-success">Mis Contratos</h3>
+                                <p class="card-text text-dark">Accedé a la información de tus contratos de alquiler y compra-venta activos.</p>
+                                <div class="mt-auto">
+                                    <span class="btn btn-outline-success w-100">Administrar Contratos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 InmoFácil - Todos los derechos reservados.</p>
+            <p>
+                <a href="/contacto.html" class="text-white mx-2">Contacto</a> |
+                <a href="/politica.html" class="text-white mx-2">Política de Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

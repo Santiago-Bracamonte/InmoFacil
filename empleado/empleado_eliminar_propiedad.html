@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error de Acceso - InmoFácil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/error_permiso_denegado.css"> <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="empleado_dashboard.html">InmoFácil (Empleado)</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_propiedades.html">Propiedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_clientes.html">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_contratos.html">Contratos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_perfil.html">Mi Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5 text-center">
+        <section aria-labelledby="error-heading" class="p-5 border rounded shadow-lg bg-white">
+            <h1 id="error-heading" class="display-4 mb-4 text-danger">
+                <i class="bi bi-exclamation-triangle-fill me-3"></i> Acceso Denegado
+            </h1>
+            <p class="lead mb-4">No tienes permiso para realizar esta acción.</p>
+
+            <div class="alert alert-warning border-0 d-inline-flex align-items-center justify-content-center p-3" role="alert">
+                <i class="bi bi-shield-lock-fill me-2 fs-4"></i>
+                <h2 class="alert-heading fs-5 mb-0">Solo los **administradores** pueden eliminar registros.</h2>
+            </div>
+
+            <p class="mt-4">Si crees que esto es un error, por favor contacta al soporte técnico.</p>
+
+            <a href="empleado_dashboard.html" class="btn btn-primary btn-lg mt-4">
+                <i class="bi bi-arrow-left-circle-fill me-2"></i> Volver al Dashboard
+            </a>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 InmoFácil - Todos los derechos reservados.</p>
+            <p>
+                <a href="/contacto.html" class="text-white mx-2">Contacto</a> |
+                <a href="politica.html" class="text-white mx-2">Política de Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Contrato - InmoFácil (Empleados)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/empleado_editar_contrato.css"> <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="empleado_dashboard.html">InmoFácil (Empleado)</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_propiedades.html">Propiedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_clientes.html">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="empleado_contratos.html">Contratos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section aria-labelledby="edit-contract-heading">
+            <h1 id="edit-contract-heading" class="text-center mb-4 text-success">Editar Detalles del Contrato</h1>
+            <p class="text-center lead mb-4">Actualiza la información de este contrato específico y guarda los cambios.</p>
+
+            <form class="p-4 border rounded shadow-sm bg-light" id="editContractForm" novalidate>
+                <input type="hidden" id="contractId" name="contractId" value="CON-001"> <div class="mb-3">
+                    <label for="clientId" class="form-label">Cliente Asociado<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="clientId" name="clientId" value="Juan Pérez (ID: C-001)" placeholder="Buscar cliente por nombre o ID" required aria-describedby="clientHelp">
+                    <div id="clientHelp" class="form-text">Asocia el contrato a un cliente existente.</div>
+                    <div class="invalid-feedback">
+                        Por favor, selecciona o ingresa un cliente válido.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="propertyId" class="form-label">Propiedad Asociada<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="propertyId" name="propertyId" value="Casa en Palermo (ID: P-101)" placeholder="Buscar propiedad por nombre o ID" required aria-describedby="propertyHelp">
+                    <div id="propertyHelp" class="form-text">Asocia el contrato a una propiedad existente.</div>
+                    <div class="invalid-feedback">
+                        Por favor, selecciona o ingresa una propiedad válida.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="contractType" class="form-label">Tipo de Contrato<span class="text-danger">*</span></label>
+                    <select class="form-select" id="contractType" name="contractType" required>
+                        <option value="">Selecciona un tipo...</option>
+                        <option value="alquiler" selected>Alquiler</option>
+                        <option value="venta">Venta</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor, selecciona el tipo de contrato.
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-6 mb-3">
+                        <label for="startDate" class="form-label">Fecha de Inicio<span class="text-danger">*</span></label>
+                        <input type="date" class="form-control" id="startDate" name="startDate" value="2024-03-01" required>
+                        <div class="invalid-feedback">
+                            Por favor, ingresa la fecha de inicio del contrato.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="endDate" class="form-label">Fecha de Fin (si aplica)</label>
+                        <input type="date" class="form-control" id="endDate" name="endDate" value="2027-02-28">
+                        <div class="form-text">Para contratos de alquiler, esta es la fecha de finalización.</div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="amount" class="form-label">Monto del Contrato<span class="text-danger">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="form-control" id="amount" name="amount" value="500" step="0.01" min="0" required aria-describedby="amountHelp">
+                        <span class="input-group-text">USD</span>
+                    </div>
+                    <div id="amountHelp" class="form-text">Monto mensual (alquiler) o total (venta).</div>
+                    <div class="invalid-feedback">
+                        Por favor, ingresa un monto válido (solo números y mayor a cero).
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="contractNotes" class="form-label">Notas Adicionales</label>
+                    <textarea class="form-control" id="contractNotes" name="contractNotes" rows="3" placeholder="Detalles importantes del contrato, cláusulas especiales, historial de pagos, etc."></textarea>
+                </div>
+
+                <div class="d-flex justify-content-center gap-3">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="bi bi-save-fill"></i> Guardar Cambios
+                    </button>
+                    <a href="empleado_contratos.html" class="btn btn-secondary btn-lg">
+                        <i class="bi bi-x-circle-fill"></i> Cancelar
+                    </a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 InmoFácil - Todos los derechos reservados.</p>
+            <p>
+                <a href="/contacto.html" class="text-white mx-2">Contacto</a> |
+                <a href="politica.html" class="text-white mx-2">Política de Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

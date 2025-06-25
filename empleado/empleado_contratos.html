@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Contratos - InmoFácil (Empleados)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/empleado_contratos.css"> </head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="empleado_dashboard.html">InmoFácil (Empleado)</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_propiedades.html">Propiedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_clientes.html">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="empleado_contratos.html">Contratos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section aria-labelledby="contracts-heading">
+            <h1 id="contracts-heading" class="text-center mb-4 text-success">Gestión de Contratos</h1>
+            <p class="text-center lead mb-4">Revisa y administra todos los contratos de propiedades en el sistema.</p>
+
+            <div class="d-flex justify-content-end mb-4">
+                <a href="empleado_agregar_contrato.html" class="btn btn-success btn-lg">
+                    <i class="bi bi-file-earmark-plus-fill"></i> Agregar Nuevo Contrato
+                </a>
+            </div>
+
+            <div class="table-responsive shadow-sm rounded">
+                <table class="table table-striped table-hover align-middle">
+                    <caption class="visually-hidden">Listado de contratos de propiedades registrados en el sistema</caption>
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">ID Contrato</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Propiedad</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Monto</th>
+                            <th scope="col">Fecha Inicio</th>
+                            <th scope="col">Fecha Fin</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CON-001</td>
+                            <td><a href="empleado_ver_cliente.html?id=C-001" class="text-decoration-none">Juan Pérez</a></td>
+                            <td><a href="empleado_ver_propiedad.html?id=P-101" class="text-decoration-none">Casa en Palermo</a></td>
+                            <td>Alquiler</td>
+                            <td>$500 USD</td>
+                            <td>2024-03-01</td>
+                            <td>2027-02-28</td>
+                            <td>
+                                <a href="empleado_editar_contrato.html?id=CON-001" class="btn btn-warning btn-sm" aria-label="Editar contrato CON-001">
+                                    <i class="bi bi-pencil-square"></i> Editar
+                                </a>
+                                <a type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteContractModal" data-contract-id="CON-001" data-contract-type="Alquiler" aria-label="Eliminar contrato CON-001">
+                                    <i class="bi bi-trash-fill"></i> Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CON-002</td>
+                            <td><a href="empleado_ver_cliente.html?id=C-002" class="text-decoration-none">María García</a></td>
+                            <td><a href="empleado_ver_propiedad.html?id=P-102" class="text-decoration-none">Departamento en Belgrano</a></td>
+                            <td>Venta</td>
+                            <td>$250.000 USD</td>
+                            <td>2025-01-15</td>
+                            <td>N/A</td>
+                            <td>
+                                <a href="empleado_editar_contrato.html?id=CON-002" class="btn btn-warning btn-sm" aria-label="Editar contrato CON-002">
+                                    <i class="bi bi-pencil-square"></i> Editar
+                                </a>
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteContractModal" data-contract-id="CON-002" data-contract-type="Venta" aria-label="Eliminar contrato CON-002">
+                                    <i class="bi bi-trash-fill"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="deleteContractModal" tabindex="-1" aria-labelledby="deleteContractModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="deleteContractModalLabel">Confirmar Eliminación de Contrato</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas eliminar el contrato de tipo **<span id="modalContractType"></span>** con ID **<span id="modalContractId"></span>**? Esta acción no se puede deshacer.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a type="button" href="/empleado/empleado_eliminar_propiedad.html" class="btn btn-danger" id="confirmDeleteButton">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 InmoFácil - Todos los derechos reservados.</p>
+            <p>
+                <a href="/contacto.html" class="text-white mx-2">Contacto</a> |
+                <a href="politica.html" class="text-white mx-2">Política de Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

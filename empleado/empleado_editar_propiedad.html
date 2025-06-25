@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Propiedad - InmoFácil (Empleados)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/empleado_editar_propiedad.css"> <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="empleado_dashboard.html">InmoFácil (Empleado)</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="empleado_propiedades.html">Propiedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_clientes.html">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_contratos.html">Contratos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section aria-labelledby="edit-property-heading">
+            <h1 id="edit-property-heading" class="text-center mb-4 text-success">Editar Detalles de la Propiedad</h1>
+            <p class="text-center lead mb-4">Actualiza la información de esta propiedad específica y guarda los cambios.</p>
+
+            <form class="p-4 border rounded shadow-sm bg-light" id="editPropertyForm" novalidate>
+                <input type="hidden" id="propertyId" name="propertyId" value="P-001"> <div class="mb-3">
+                    <label for="propertyName" class="form-label">Nombre/Título de la Propiedad<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="propertyName" name="propertyName" value="Casa con jardín y piscina" placeholder="Ej: Departamento céntrico, Casa familiar en barrio privado" required aria-describedby="propertyNameHelp">
+                    <div id="propertyNameHelp" class="form-text">Título descriptivo para la propiedad.</div>
+                    <div class="invalid-feedback">
+                        Por favor, ingresa el nombre o título de la propiedad.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="propertyAddress" class="form-label">Dirección Completa<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="propertyAddress" name="propertyAddress" value="Calle Falsa 123, Burzaco, Buenos Aires" placeholder="Ej: Av. Corrientes 1234, CABA" required aria-describedby="propertyAddressHelp">
+                    <div id="propertyAddressHelp" class="form-text">Dirección exacta de la propiedad.</div>
+                    <div class="invalid-feedback">
+                        Por favor, ingresa la dirección de la propiedad.
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-6 mb-3">
+                        <label for="propertyType" class="form-label">Tipo de Propiedad<span class="text-danger">*</span></label>
+                        <select class="form-select" id="propertyType" name="propertyType" required>
+                            <option value="">Selecciona un tipo...</option>
+                            <option value="casa" selected>Casa</option>
+                            <option value="departamento">Departamento</option>
+                            <option value="terreno">Terreno</option>
+                            <option value="oficina">Oficina</option>
+                            <option value="local_comercial">Local Comercial</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor, selecciona el tipo de propiedad.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="transactionType" class="form-label">Tipo de Transacción<span class="text-danger">*</span></label>
+                        <select class="form-select" id="transactionType" name="transactionType" required>
+                            <option value="">Selecciona un tipo...</option>
+                            <option value="venta">Venta</option>
+                            <option value="alquiler">Alquiler</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor, selecciona el tipo de transacción.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="propertyPrice" class="form-label">Precio<span class="text-danger">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="form-control" id="propertyPrice" name="propertyPrice" value="250000" step="0.01" min="0" required aria-describedby="priceHelp">
+                        <span class="input-group-text">USD</span>
+                    </div>
+                    <div id="priceHelp" class="form-text">Precio de venta o valor de alquiler mensual.</div>
+                    <div class="invalid-feedback">
+                        Por favor, ingresa un precio válido (solo números y mayor a cero).
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-4 mb-3">
+                        <label for="bedrooms" class="form-label">Habitaciones</label>
+                        <input type="number" class="form-control" id="bedrooms" name="bedrooms" value="3" min="0">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="bathrooms" class="form-label">Baños</label>
+                        <input type="number" class="form-control" id="bathrooms" name="bathrooms" value="2" min="0" step="0.5">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="area" class="form-label">Superficie (m²)</label>
+                        <input type="number" class="form-control" id="area" name="area" value="150" min="0">
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="propertyDescription" class="form-label">Descripción Detallada</label>
+                    <textarea class="form-control" id="propertyDescription" name="propertyDescription" rows="5" placeholder="Describe las características principales de la propiedad, ventajas, distribución, servicios cercanos, etc.">Hermosa casa en barrio tranquilo de Burzaco, con amplio jardín, piscina y tres habitaciones luminosas. Ideal para familias.</textarea>
+                </div>
+
+                <div class="d-flex justify-content-center gap-3">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="bi bi-save-fill"></i> Guardar Cambios
+                    </button>
+                    <a href="empleado_propiedades.html" class="btn btn-secondary btn-lg">
+                        <i class="bi bi-x-circle-fill"></i> Cancelar
+                    </a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 InmoFácil - Todos los derechos reservados.</p>
+            <p>
+                <a href="/contacto.html" class="text-white mx-2">Contacto</a> |
+                <a href="politica.html" class="text-white mx-2">Política de Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

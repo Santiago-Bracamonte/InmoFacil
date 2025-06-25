@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Propiedades - InmoFácil (Empleados)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/empleado_propiedades.css"> <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="empleado_dashboard.html">InmoFácil (Empleado)</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="empleado_propiedades.html">Propiedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_clientes.html">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_contratos.html">Contratos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_perfil.html">Mi Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section aria-labelledby="property-management-heading">
+            <h1 id="property-management-heading" class="text-center mb-4 text-success">Gestión de Propiedades</h1>
+            <p class="text-center lead mb-4">Administra todas las propiedades disponibles en el sistema.</p>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="input-group" style="max-width: 300px;">
+                    <input type="text" class="form-control" placeholder="Buscar propiedad..." aria-label="Buscar propiedad">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
+                </div>
+                <a href="empleado_agregar_propiedad.html" class="btn btn-success">
+                    <i class="bi bi-plus-circle-fill me-2"></i> Agregar Nueva Propiedad
+                </a>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-bordered caption-top align-middle">
+                    <caption>Lista de propiedades registradas en InmoFácil.</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Ubicación</th>
+                            <th scope="col">Tipo</th> <th scope="col">Transacción</th> <th scope="col">Precio</th>
+                            <th scope="col">Descripción Breve</th> <th scope="col" class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge bg-secondary">P001</span></td>
+                            <td><strong>Casa con Amplio Jardín</strong></td>
+                            <td>Ubicación A, Burzaco</td>
+                            <td>Casa</td>
+                            <td>Venta</td>
+                            <td><strong>$100,000 USD</strong></td>
+                            <td>Hermosa propiedad con 3 habitaciones y 2 baños, ideal para familias. Cuenta con pileta y cochera.</td>
+                            <td class="text-center text-nowrap">
+                                <a href="empleado_editar_propiedad.html?id=P001" class="btn btn-warning btn-sm me-1" title="Editar Propiedad">
+                                    <i class="bi bi-pencil-square"></i> Editar
+                                </a>
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-property-id="P001" title="Eliminar Propiedad">
+                                    <i class="bi bi-trash-fill"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge bg-secondary">P002</span></td>
+                            <td><strong>Departamento Céntricos</strong></td>
+                            <td>Ubicación B, CABA</td>
+                            <td>Departamento</td>
+                            <td>Alquiler</td>
+                            <td><strong>$500 USD/mes</strong></td>
+                            <td>Apartamento moderno de 2 ambientes, excelente ubicación cerca de transporte público y comercios.</td>
+                            <td class="text-center text-nowrap">
+                                <a href="empleado_editar_propiedad.html?id=P002" class="btn btn-warning btn-sm me-1" title="Editar Propiedad">
+                                    <i class="bi bi-pencil-square"></i> Editar
+                                </a>
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-property-id="P002" title="Eliminar Propiedad">
+                                    <i class="bi bi-trash-fill"></i> Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+            
+            <nav aria-label="Navegación de propiedades" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                    </li>
+                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Siguiente</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </section>
+    </main>
+
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar la propiedad con ID: <strong id="modalPropertyId"></strong>?</p>
+                    <div class="alert alert-warning mt-3" role="alert">
+                        Esta acción es <strong>irreversible</strong>. Los datos asociados a esta propiedad se perderán permanentemente.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <a type="button" class="btn btn-danger" id="confirmDeleteButton" href="/empleado/empleado_eliminar_propiedad.html">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 InmoFácil - Todos los derechos reservados.</p>
+            <p>
+                <a href="/contacto.html" class="text-white mx-2">Contacto</a> |
+                <a href="politica.html" class="text-white mx-2">Política de Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

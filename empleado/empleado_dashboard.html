@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard del Empleado - InmoFácil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/empleado_dashboard.css"> </head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="empleado_dashboard.html">InmoFácil (Empleado)</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="empleado_dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_propiedades.html">Propiedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_clientes.html">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empleado_contratos.html">Contratos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section aria-labelledby="dashboard-heading">
+            <h1 id="dashboard-heading" class="text-center mb-5 text-success">Bienvenido al Panel de Control del Empleado</h1>
+            <p class="text-center lead mb-5">Accede rápidamente a las herramientas clave para gestionar propiedades, clientes y contratos.</p>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
+                <div class="col">
+                    <a href="empleado_propiedades.html" class="card-link text-decoration-none">
+                        <article class="card h-100 shadow-sm border-0 transform-on-hover">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-house-door-fill text-success fs-3 me-3"></i>
+                                    <h2 class="card-title h5 mb-0">Gestión de Propiedades</h2>
+                                </div>
+                                <p class="card-text text-muted">Administra todas las propiedades disponibles: agrega nuevas, edita detalles existentes, o elimina propiedades que ya no están activas.</p>
+                            </div>
+                            <div class="card-footer bg-light border-0 py-3">
+                                <small class="text-muted">Ir a Propiedades &rarr;</small>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="empleado_clientes.html" class="card-link text-decoration-none">
+                        <article class="card h-100 shadow-sm border-0 transform-on-hover">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-person-fill text-info fs-3 me-3"></i>
+                                    <h2 class="card-title h5 mb-0">Gestión de Clientes</h2>
+                                </div>
+                                <p class="card-text text-muted">Crea, consulta y actualiza la información de los clientes. Mantén un registro organizado de todos los interesados.</p>
+                            </div>
+                            <div class="card-footer bg-light border-0 py-3">
+                                <small class="text-muted">Ir a Clientes &rarr;</small>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="empleado_contratos.html" class="card-link text-decoration-none">
+                        <article class="card h-100 shadow-sm border-0 transform-on-hover">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-file-earmark-text-fill text-primary fs-3 me-3"></i>
+                                    <h2 class="card-title h5 mb-0">Gestión de Contratos</h2>
+                                </div>
+                                <p class="card-text text-muted">Supervisa y actualiza todos los contratos de alquiler y venta. Accede al historial y detalles de cada acuerdo.</p>
+                            </div>
+                            <div class="card-footer bg-light border-0 py-3">
+                                <small class="text-muted">Ir a Contratos &rarr;</small>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="empleado_perfil.html" class="card-link text-decoration-none">
+                        <article class="card h-100 shadow-sm border-0 transform-on-hover">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-gear-fill text-secondary fs-3 me-3"></i>
+                                    <h2 class="card-title h5 mb-0">Mi Perfil y Ajustes</h2>
+                                </div>
+                                <p class="card-text text-muted">Gestiona la información de tu cuenta, preferencias personales y ajustes de seguridad.</p>
+                            </div>
+                            <div class="card-footer bg-light border-0 py-3">
+                                <small class="text-muted">Ir a Perfil &rarr;</small>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 InmoFácil - Todos los derechos reservados.</p>
+            <p>
+                <a href="/contacto.html" class="text-white mx-2">Contacto</a> |
+                <a href="politica.html" class="text-white mx-2">Política de Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</body>
+</html>

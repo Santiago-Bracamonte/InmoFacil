@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades Disponibles - Inmobiliaria InmoFácil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/user_propiedades.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #28a745;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="user_dashboard.html">InmoFácil</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="user_dashboard.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="user_propiedades.html">Propiedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user_contratos.html">Mis Contratos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <h1 class="text-center mb-5 text-success">Propiedades Disponibles</h1>
+
+        <section aria-labelledby="propiedadesEnVentaHeading">
+            <h2 id="propiedadesEnVentaHeading" class="visually-hidden">Propiedades en Venta y Alquiler</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                
+                <article class="col">
+                    <div class="card h-100 border-success shadow-sm">
+                        <img src="/img/DeptoBarrioNorte.webp" class="card-img-top" alt="Imágen principal de un departamento en Barrio Norte">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title text-success">Departamento en Barrio Norte</h3>
+                            <p class="card-text">Hermoso departamento con jardín y piscina, ubicado en el exclusivo Barrio Norte.</p>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><strong>Precio:</strong> $250,000</li>
+                                <li class="list-group-item"><strong>Habitaciones:</strong> 3</li>
+                                <li class="list-group-item"><strong>Baños:</strong> 2</li>
+                            </ul>
+                            <div class="mt-auto">
+                                <button class="btn btn-info w-100" data-bs-toggle="modal" data-bs-target="#modalPropiedadBarrioNorte" aria-label="Ver detalles del Departamento en Barrio Norte">Ver Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="modal fade" id="modalPropiedadBarrioNorte" tabindex="-1" aria-labelledby="modalPropiedadBarrioNorteLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modalPropiedadBarrioNorteLabel">Detalles del Departamento en Barrio Norte</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h5 class="mb-3">Información detallada</h5>
+                                <p><strong>Descripción:</strong> Hermoso departamento con jardín, piscina y amplia sala de estar. Perfecta para familias que buscan confort y seguridad.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li><strong>Precio:</strong> $250,000</li>
+                                    <li><strong>Habitaciones:</strong> 3</li>
+                                    <li><strong>Baños:</strong> 2</li>
+                                    <li><strong>Superficie:</strong> 350 m²</li>
+                                    <li><strong>Ubicación:</strong> Barrio Norte, Ciudad Autónoma de Buenos Aires</li>
+                                </ul>
+                                
+                                <div id="carouselPropiedadBarrioNorte" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="/img/DeptoBarrioNorte1.webp" class="d-block w-100" alt="Interior del departamento en Barrio Norte">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/img/DeptoBarrioNorte2.webp" class="d-block w-100" alt="Jardín del departamento en Barrio Norte">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/img/DeptoBarrioNorte3.webp" class="d-block w-100" alt="Piscina del departamento en Barrio Norte">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselPropiedadBarrioNorte" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Anterior</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselPropiedadBarrioNorte" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Siguiente</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <article class="col">
+                    <div class="card h-100 border-success shadow-sm">
+                        <img src="/img/DeptoPalermo.webp" class="card-img-top" alt="Imágen principal de un departamento en Palermo">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title text-success">Departamento en Palermo</h3>
+                            <p class="card-text">Moderno departamento en el corazón de Palermo, con balcón y vista panorámica.</p>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><strong>Precio:</strong> $150,000</li>
+                                <li class="list-group-item"><strong>Habitaciones:</strong> 2</li>
+                                <li class="list-group-item"><strong>Baños:</strong> 1</li>
+                            </ul>
+                            <div class="mt-auto">
+                                <button class="btn btn-info w-100" data-bs-toggle="modal" data-bs-target="#modalPropiedadPalermo" aria-label="Ver detalles del Departamento en Palermo">Ver Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="modal fade" id="modalPropiedadPalermo" tabindex="-1" aria-labelledby="modalPropiedadPalermoLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modalPropiedadPalermoLabel">Detalles del Departamento en Palermo</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h5 class="mb-3">Información detallada</h5>
+                                <p><strong>Descripción:</strong> Moderno departamento con balcón y excelentes vistas, ideal para parejas o solteros.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li><strong>Precio:</strong> $150,000</li>
+                                    <li><strong>Habitaciones:</strong> 2</li>
+                                    <li><strong>Baños:</strong> 1</li>
+                                    <li><strong>Superficie:</strong> 120 m²</li>
+                                    <li><strong>Ubicación:</strong> Palermo, Ciudad Autónoma de Buenos Aires</li>
+                                </ul>
+
+                                <div id="carouselPropiedadPalermo" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="/img/DeptoPalermo1.webp" class="d-block w-100" alt="Interior del departamento en Palermo">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/img/DeptoPalermo2.webp" class="d-block w-100" alt="Balcón del departamento en Palermo">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/img/DeptoPalermo3.webp" class="d-block w-100" alt="Vista desde el departamento en Palermo">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselPropiedadPalermo" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Anterior</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselPropiedadPalermo" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Siguiente</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <article class="col">
+                    <div class="card h-100 border-success shadow-sm">
+                        <img src="/img/casa1.webp" class="card-img-top" alt="Imágen principal de una casa en Pinamar">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title text-success">Casa en Pinamar</h3>
+                            <p class="card-text">Hermosa casa con jardín y piscina, ubicada en el exclusivo Norte de Pinamar.</p>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><strong>Precio:</strong> $350,000</li>
+                                <li class="list-group-item"><strong>Habitaciones:</strong> 4</li>
+                                <li class="list-group-item"><strong>Baños:</strong> 2</li>
+                            </ul>
+                            <div class="mt-auto">
+                                <button class="btn btn-info w-100" data-bs-toggle="modal" data-bs-target="#modalPropiedadPinamar" aria-label="Ver detalles de la Casa en Pinamar">Ver Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="modal fade" id="modalPropiedadPinamar" tabindex="-1" aria-labelledby="modalPropiedadPinamarLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modalPropiedadPinamarLabel">Detalles de la Casa en Pinamar</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h5 class="mb-3">Información detallada</h5>
+                                <p><strong>Descripción:</strong> Hermosa casa con jardín, piscina y amplia sala de estar. Perfecta para familias que buscan confort y seguridad en la costa.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li><strong>Precio:</strong> $350,000</li>
+                                    <li><strong>Habitaciones:</strong> 4</li>
+                                    <li><strong>Baños:</strong> 2</li>
+                                    <li><strong>Superficie:</strong> 350 m²</li>
+                                    <li><strong>Ubicación:</strong> Pinamar Norte, Buenos Aires</li>
+                                </ul>
+
+                                <div id="carouselPropiedadPinamar" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="/img/casa1c.webp" class="d-block w-100" alt="Exterior de la casa en Pinamar">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/img/casa1a.webp" class="d-block w-100" alt="Piscina de la casa en Pinamar">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/img/casa1b.webp" class="d-block w-100" alt="Jardín de la casa en Pinamar">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselPropiedadPinamar" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Anterior</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselPropiedadPinamar" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Siguiente</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <article class="col">
+                    <div class="card h-100 border-success shadow-sm">
+                        <img src="/img/CasaBarracas.webp" class="card-img-top" alt="Imágen principal de una casa en Barracas">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title text-success">Casa en Barracas</h3>
+                            <p class="card-text">Acogedora casa en el histórico barrio de Barracas, ideal para la vida urbana.</p>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><strong>Precio:</strong> $220,000</li>
+                                <li class="list-group-item"><strong>Habitaciones:</strong> 3</li>
+                                <li class="list-group-item"><strong>Baños:</strong> 2</li>
+                            </ul>
+                            <div class="mt-auto">
+                                <button class="btn btn-info w-100" data-bs-toggle="modal" data-bs-target="#modalPropiedadBarracas" aria-label="Ver detalles de la Casa en Barracas">Ver Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="modal fade" id="modalPropiedadBarracas" tabindex="-1" aria-labelledby="modalPropiedadBarracasLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modalPropiedadBarracasLabel">Detalles de la Casa en Barracas</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h5 class="mb-3">Información detallada</h5>
+                                <p><strong>Descripción:</strong> Casa con encanto en Barracas, cerca de parques y centros culturales. Perfecta para quienes buscan la autenticidad de la ciudad.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li><strong>Precio:</strong> $220,000</li>
+                                    <li><strong>Habitaciones:</strong> 3</li>
+                                    <li><strong>Baños:</strong> 2</li>
+                                    <li><strong>Superficie:</strong> 180 m²</li>
+                                    <li><strong>Ubicación:</strong> Barracas, Ciudad Autónoma de Buenos Aires</li>
+                                </ul>
+
+                                <div id="carouselPropiedadBarracas" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="/img/CasaBarracas1.webp" class="d-block w-100" alt="Exterior de la casa en Barracas">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/img/CasaBarracas2.webp" class="d-block w-100" alt="Interior de la casa en Barracas">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/img/CasaBarracas3.webp" class="d-block w-100" alt="Cocina de la casa en Barracas">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselPropiedadBarracas" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Anterior</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselPropiedadBarracas" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Siguiente</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="mb-1">&copy; 2024 InmoFácil - Todos los derechos reservados</p>
+        <p>
+            <a href="/contacto.html" class="text-white mx-2">Contacto</a> | 
+            <a href="/politica.html" class="text-white mx-2">Política de Privacidad</a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

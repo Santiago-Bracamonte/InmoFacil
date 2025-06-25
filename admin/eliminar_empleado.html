@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Eliminación de Empleado - InmoFácil (Admin)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/eliminar_empleado.css"> <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="admin_dashboard.html">
+                    <i class="bi bi-house-door-fill me-2"></i>InmoFácil Admin
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin_dashboard.html">
+                                <i class="bi bi-grid-fill me-1"></i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin_usuarios.html">
+                                <i class="bi bi-people-fill me-1"></i>Usuarios
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="admin_empleados.html">
+                                <i class="bi bi-person-badge-fill me-1"></i>Empleados
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin_reportes.html">
+                                <i class="bi bi-graph-up-arrow me-1"></i>Reportes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">
+                                <i class="bi bi-box-arrow-right me-1"></i>Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section aria-labelledby="delete-employee-heading">
+            <h1 id="delete-employee-heading" class="text-center mb-4 display-5 text-danger">
+                <i class="bi bi-person-x-fill me-3"></i> Confirmar Eliminación de Empleado
+            </h1>
+            <p class="text-center lead mb-5">
+                Estás a punto de eliminar al siguiente empleado del sistema. Por favor, revisa los detalles cuidadosamente antes de proceder.
+            </p>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-md-9">
+                    <div class="card shadow-lg p-4 border-danger">
+                        <div class="card-body">
+                            <h3 class="card-title text-center text-danger mb-4">Detalles del Empleado a Eliminar</h3>
+                            <dl class="row">
+                                <dt class="col-sm-4">ID:</dt>
+                                <dd class="col-sm-8" id="employeeIdDisplay">Cargando...</dd>
+
+                                <dt class="col-sm-4">Nombre Completo:</dt>
+                                <dd class="col-sm-8" id="employeeNameDisplay">Cargando...</dd>
+
+                                <dt class="col-sm-4">Email:</dt>
+                                <dd class="col-sm-8" id="employeeEmailDisplay">Cargando...</dd>
+
+                                <dt class="col-sm-4">Cargo:</dt>
+                                <dd class="col-sm-8" id="employeePositionDisplay">Cargando...</dd>
+
+                                <dt class="col-sm-4">Fecha de Contratación:</dt>
+                                <dd class="col-sm-8" id="employeeStartDateDisplay">Cargando...</dd>
+                            </dl>
+
+                            <hr class="my-4">
+
+                            <p class="text-center text-danger fw-bold fs-5">
+                                <i class="bi bi-exclamation-triangle-fill me-2"></i> ¡ATENCIÓN! Esta acción es **irreversible**.
+                            </p>
+                            <p class="text-center mb-4">
+                                El empleado y todos los datos asociados (si aplica) serán eliminados permanentemente del sistema.
+                            </p>
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="button" class="btn btn-danger btn-lg me-md-2" id="confirmDeleteBtn">
+                                    <i class="bi bi-trash-fill me-2"></i> Eliminar Definitivamente
+                                </button>
+                                <a href="admin_empleados.html" class="btn btn-secondary btn-lg">
+                                    <i class="bi bi-x-circle-fill me-2"></i> Cancelar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 InmoFácil - Todos los derechos reservados.</p>
+            <p>
+                <a href="/contacto.html" class="text-white mx-2">Contacto</a> |
+                <a href="politica.html" class="text-white mx-2">Política de Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

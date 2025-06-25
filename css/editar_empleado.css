@@ -1,0 +1,84 @@
+.navbar {
+    background-color: #212529 !important;
+    padding: 1rem 0;
+    border-bottom: 3px solid #007bff;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-size: 1.6rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #e9ecef !important;
+}
+
+.nav-link {
+    color: #e9ecef !important;
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    background-color: #007bff !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border-radius: 0.3rem;
+}
+.rol-administrador {
+    background-color: #007bff;
+    color: white;
+}
+
+.rol-vendedor {
+    background-color: #28a745;
+    color: white;
+}
+
+.container {
+    flex: 1;
+    padding-top: 50px;
+}
+
+.header-title {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #a31b1b;
+}
+
+.btn-primary {
+    background-color: #d9534f;
+    border-color: #d9534f;
+}
+
+.btn-secondary {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.form-label {
+    color: #a31b1b;
+}
+
+input, select {
+    border-color: #a31b1b !important;
+}
+
+.form-control:focus {
+    border-color: #d9534f !important;
+    box-shadow: 0 0 0 0.2rem rgba(217, 83, 79, 0.25);
+}
